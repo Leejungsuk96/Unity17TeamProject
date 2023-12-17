@@ -15,8 +15,7 @@ public class UnitController : CharacterController  // 플레이어 이동에 상속받을 �
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameManager.instance;
-        ClosestTarget = gameManager.AttackTarget;
+       
     }
 
     // Update is called once per frame

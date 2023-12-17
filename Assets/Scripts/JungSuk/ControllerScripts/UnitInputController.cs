@@ -49,7 +49,7 @@ public class UnitInputController : CharacterController
     }
     public void OnSelect(InputValue value)
     {
-        Debug.Log("OnSelect" + value.ToString());
+        
     }
 
 }
