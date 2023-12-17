@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DefaultAttackData", menuName = "UnitController/Attacks/Default", order = 0)]
+[CreateAssetMenu(fileName = "DefaultAttackData", menuName = "UnitController/Attacks/Defualt", order = 0)]
 public class AttackSO : ScriptableObject
 {
     [Header("Attack Info")]
@@ -10,7 +10,7 @@ public class AttackSO : ScriptableObject
     public float delay;
     public float power;
     public float speed;
-    public LayerMask target;
+    public LayerMask target;    
 
     [Header("Knock Back Info")]
     public bool isOnKnockBack;
