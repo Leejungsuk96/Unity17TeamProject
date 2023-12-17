@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Transform spawnPoint;
 
+    Vector3 spawnPosition;
     float timer;
 
     private void Awake()
     {
-        spawnPoint = GetComponent<Transform>();
+        
     }
 
 
@@ -27,6 +27,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Spawn()
     {
-        GameManager.instance.pool.PoolingEnemy(0);
+        
+       GameObject enemy = GameManager.instance.pool.PoolingEnemy(0);
+        spawnPosition = new Vector3(-7, 3, 0);
+        enemy.transform.position = spawnPosition;
     }
 }
