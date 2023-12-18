@@ -6,7 +6,8 @@ public class SummonsEnemyTowerController : MonoBehaviour
 {
     private int currentSommonsCount = 0;
     private int waveSpawnPosCount = 0;
-    private int waveSpawnCount = 0;
+    private int waveSpawnCount = 20;
+    private float timer = 0f;
     [SerializeField] private int currentWaveIndex = 0;
 
     public float spawnInterval = .5f;
@@ -27,6 +28,11 @@ public class SummonsEnemyTowerController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        timer += Time.deltaTime;
+    }
+
     private void Start()
     {
         StartCoroutine("StartNextWave");
@@ -36,7 +42,7 @@ public class SummonsEnemyTowerController : MonoBehaviour
     {
         while (true)
         {
-            if (currentSommonsCount < waveSpawnCount)
+            if (timer > 1 && currentSommonsCount < waveSpawnCount)
             {
                 yield return new WaitForSeconds(2f);
 
@@ -68,6 +74,7 @@ public class SummonsEnemyTowerController : MonoBehaviour
                 }
 
                 currentWaveIndex++;
+                timer = 0;
             }
 
             yield return null;
