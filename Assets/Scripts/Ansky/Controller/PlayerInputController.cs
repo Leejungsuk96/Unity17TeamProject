@@ -23,5 +23,6 @@ public class PlayerInputController : TopDownTowerController
     public void OnClick(InputValue value)
     {
         IsClicking = value.isPressed;
+        Debug.Log(IsClicking);
     }
 }

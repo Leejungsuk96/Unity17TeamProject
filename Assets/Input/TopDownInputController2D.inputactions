@@ -27,11 +27,11 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "67603d22-1396-4fe9-bc88-0ba77797dcc9",
-                    "path": "<Mouse>/delta/left",
+                    "id": "ea608cb8-4dcf-4966-98c6-1ab829ca6981",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
