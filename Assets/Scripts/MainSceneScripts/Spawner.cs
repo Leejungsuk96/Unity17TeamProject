@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer > 0.2f) // 몬스터 스폰 시간
+        if(timer > 1f) // 몬스터 스폰 시간
         {
             timer = 0;
             Spwan();
@@ -30,6 +30,6 @@ public class Spawner : MonoBehaviour
     void Spwan() // 몬스터 스폰
     {
         GameObject enemy = GameManager.instance.pool.Get(Random.Range(0,3));
-        enemy.transform.position = spawnPoint[Random.Range(1,spawnPoint.Length)].position;
+        enemy.transform.position = spawnPoint[1].position;
     }
 }
