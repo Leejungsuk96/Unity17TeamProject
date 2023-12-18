@@ -103,7 +103,7 @@ MonoBehaviour:
     statsChangeType: 0
     maxHealth: 100
     speed: 1
-    attackSO: {fileID: 0}
+    attackSO: {fileID: 11400000, guid: 1963de1937d174f34b51ba58de1e22d8, type: 2}
   statsModifiers: []
 --- !u!61 &477408625738579758
 BoxCollider2D:

@@ -9,7 +9,14 @@ public class TopDownTowerController : MonoBehaviour
     public event Action OnClickEvent;
     public event Action<Vector2> OnLookEvent;
 
+
+    protected TowerStatHandler Stats { get; private set; }
     protected bool IsClicking { get; set; }
+
+    protected virtual void Awake()
+    {
+        Stats = GetComponent<TowerStatHandler>();
+    }
 
     protected virtual void Update()
     {
