@@ -14,17 +14,27 @@ public class UnitInputController : CharacterController
         _camera = Camera.main;
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    //public void OnMove(InputAction.CallbackContext context)
+    //{
+
+    //    if (context.performed)
+    //    {
+    //        Vector2 mousePosition = context.ReadValue<Vector2>();
+
+    //        Vector2 worldPos = _camera.ScreenToWorldPoint(mousePosition);
+    //        Vector2 moveDirection = (worldPos - (Vector2)transform.position).normalized;
+    //        CallMoveEvent(moveDirection);
+    //    }
+    //}
+    public void OnMove(InputValue value)
     {
 
-        if (context.performed)
-        {
-            Vector2 mousePosition = context.ReadValue<Vector2>();
+        Vector2 mousePosition = value.Get<Vector2>();
 
             Vector2 worldPos = _camera.ScreenToWorldPoint(mousePosition);
             Vector2 moveDirection = (worldPos - (Vector2)transform.position).normalized;
             CallMoveEvent(moveDirection);
-        }
+        
     }
     public void OnLook(InputValue value)
     {
