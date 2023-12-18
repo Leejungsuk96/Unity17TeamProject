@@ -14,44 +14,61 @@ public class UnitInputController : CharacterController
         _camera = Camera.main;
     }
 
-    //public void OnMove(InputAction.CallbackContext context)
-    //{
 
-    //    if (context.performed)
-    //    {
-    //        Vector2 mousePosition = context.ReadValue<Vector2>();
-
-    //        Vector2 worldPos = _camera.ScreenToWorldPoint(mousePosition);
-    //        Vector2 moveDirection = (worldPos - (Vector2)transform.position).normalized;
-    //        CallMoveEvent(moveDirection);
-    //    }
-    //}
     public void OnMove(InputValue value)
     {
-
-        Vector2 mousePosition = value.Get<Vector2>();
-
-            Vector2 worldPos = _camera.ScreenToWorldPoint(mousePosition);
-            Vector2 moveDirection = (worldPos - (Vector2)transform.position).normalized;
-            CallMoveEvent(moveDirection);
-        
+        // Debug.Log("OnMove" + value.ToString());
+        Vector2 moveInput = value.Get<Vector2>().normalized;
+        CallMoveEvent(moveInput);
     }
+
     public void OnLook(InputValue value)
     {
+        
+        
         Vector2 newAim = value.Get<Vector2>();
-        Vector2 WorldPos = _camera.ScreenToWorldPoint(newAim);
-        newAim = (WorldPos - (Vector2)transform.position).normalized;
+        Vector2 worldPos = _camera.ScreenToWorldPoint(newAim);
+        newAim = (worldPos - (Vector2)transform.position).normalized;
 
-        if (newAim.magnitude >= 0.9f)
+        if (newAim.magnitude >= .9f)
+        // Vector 값을 실수로 변환
         {
             CallLookEvent(newAim);
         }
     }
-    public void OnSelect(InputValue value)
+
+    public void OnFire(InputValue value)
     {
-        
+        Debug.Log("OnFire" + value.ToString());
     }
 
-    
 
 }
+//public void OnMove(InputAction.CallbackContext context)
+//{
+
+//    if (context.performed)
+//    {
+//        Vector2 mousePosition = context.ReadValue<Vector2>();
+
+//        Vector2 worldPos = _camera.ScreenToWorldPoint(mousePosition);
+//        Vector2 moveDirection = (worldPos - (Vector2)transform.position).normalized;
+//        CallMoveEvent(moveDirection);
+//    }
+//}
+
+//public void OnLook(InputValue value)
+//{
+//    Vector2 newAim = value.Get<Vector2>();
+//    Vector2 WorldPos = _camera.ScreenToWorldPoint(newAim);
+//    newAim = (WorldPos - (Vector2)transform.position).normalized;
+
+//    if (newAim.magnitude >= 0.9f)
+//    {
+//        CallLookEvent(newAim);
+//    }
+//}
+//public void OnSelect(InputValue value)
+//{
+
+//}

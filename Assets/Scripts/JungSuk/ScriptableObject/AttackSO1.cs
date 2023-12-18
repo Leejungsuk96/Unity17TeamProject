@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DefaultAttackData", menuName = "UnitController/Attacks/Defualt", order = 0)]
-public class AttackSO : ScriptableObject
+public class AttackSO1 : ScriptableObject
 {
     [Header("Attack Info")]
     public float size;

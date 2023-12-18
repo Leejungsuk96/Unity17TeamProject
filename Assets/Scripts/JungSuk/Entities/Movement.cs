@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
 {
     private CharacterController _controller;
     private float moveSpeed = 5f;
-    private Vector2 moveDirection = Vector2.zero;
+    private Vector2 _movementDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
 
 
@@ -25,18 +25,38 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyMovement(moveDirection);
+        ApplyMovment(_movementDirection);
     }
 
     private void Move(Vector2 direction)
     {
-        moveDirection = direction;
-
+        _movementDirection = direction;
     }
 
-    private void ApplyMovement(Vector2 direction)
+    private void ApplyMovment(Vector2 direction)
     {
-        _rigidbody.MovePosition(_rigidbody.position + direction * moveSpeed * Time.deltaTime);
+        direction = direction * 5;
 
+        _rigidbody.velocity = direction;
     }
+
 }
+
+
+
+//private void FixedUpdate()
+//{
+//    ApplyMovement(moveDirection);
+//}
+
+//private void Move(Vector2 direction)
+//{
+//    moveDirection = direction;
+
+//}
+
+//private void ApplyMovement(Vector2 direction)
+//{
+//    _rigidbody.MovePosition(_rigidbody.position + direction * moveSpeed * Time.deltaTime);
+
+//}
