@@ -29,7 +29,6 @@ public class PlayerTowerStatController : MonoBehaviour
     private void OnAim(Vector2 direction)
     {
         _aimDirection = direction;
-        Debug.Log(_aimDirection);
     }
 
     private void NullClick()
@@ -50,7 +49,6 @@ public class PlayerTowerStatController : MonoBehaviour
         }
 
         RaycastHit2D hit = Physics2D.Raycast(_aimDirection, Vector2.zero, 0f);
-        Debug.Log(hit.collider);
 
         if (hit.collider == null)
         {
