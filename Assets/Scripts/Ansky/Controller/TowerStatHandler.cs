@@ -6,28 +6,10 @@ using UnityEngine;
 
 public class TowerStatHandler : MonoBehaviour
 {
-    private const float MinAttackDelay = 0.03f;
-    private const float MinAttackPower = 0.5f;
-    private const float MinAttackSize = 0.4f;
-    private const float MinAttackSpeed = .1f;
-    private const float MinSpeed = 0.8f;
-    private const int MinMaxHealth = 5;
 
     [SerializeField] private TowerStats baseStats;
     public TowerStats CurrentStats { get; private set; }
     public List<TowerStats> statsModifiers = new List<TowerStats>();
-
-    public void AddStatModifier(TowerStats statModifier)
-    {
-        statsModifiers.Add(statModifier);
-        UpdateTowerStats();
-    }
-
-    public void RemoveStatModifier(TowerStats statModifier)
-    {
-        statsModifiers.Remove(statModifier);
-        UpdateTowerStats();
-    }
 
     private void Awake()
     {
@@ -43,29 +25,10 @@ public class TowerStatHandler : MonoBehaviour
         }
 
         CurrentStats = new TowerStats { attackSO = attackSO };
-        UpdateStats((a, b) => b, baseStats);
-        if (CurrentStats.attackSO != null)
-        {
-            CurrentStats.attackSO.target = baseStats.attackSO.target;
-        }
+        CurrentStats.statsChangeType = baseStats.statsChangeType;
+        CurrentStats.maxHealth = baseStats.maxHealth;
+        CurrentStats.speed = baseStats.speed;
 
-        foreach (TowerStats modifier in statsModifiers.OrderBy(o => o.statsChangeType))
-        {
-            if (modifier.statsChangeType == StatsChangeType.Override)
-            {
-                UpdateStats((o, o1) => o1, modifier);
-            }
-            else if (modifier.statsChangeType == StatsChangeType.Add)
-            {
-                UpdateStats((o, o1) => o + o1, modifier);
-            }
-            else if (modifier.statsChangeType == StatsChangeType.Multiple)
-            {
-                UpdateStats((o, o1) => o * o1, modifier);
-            }
-        }
-
-        LimitAllStats();
 
     }
 
@@ -144,12 +107,5 @@ public class TowerStatHandler : MonoBehaviour
         {
             return;
         }
-
-        LimitStats(ref CurrentStats.attackSO.delay, MinAttackDelay);
-        LimitStats(ref CurrentStats.attackSO.power, MinAttackPower);
-        LimitStats(ref CurrentStats.attackSO.size, MinAttackSize);
-        LimitStats(ref CurrentStats.attackSO.speed, MinAttackSpeed);
-        LimitStats(ref CurrentStats.speed, MinSpeed);
-        CurrentStats.maxHealth = Mathf.Max(CurrentStats.maxHealth, MinMaxHealth);
     }
 }
