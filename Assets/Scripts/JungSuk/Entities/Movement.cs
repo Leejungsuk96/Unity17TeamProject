@@ -2,19 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Movement : MonoBehaviour
 {
     private CharacterController _controller;
-
-    private Vector2 _movementDirection = Vector2.zero;
+    private float moveSpeed = 5f;
+    private Vector2 moveDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
 
 
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        _rigidbody = GetComponent<Rigidbody2D>();   
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -24,18 +25,18 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyMovement(_movementDirection);
+        ApplyMovement(moveDirection);
     }
 
     private void Move(Vector2 direction)
     {
-        _movementDirection = direction;
+        moveDirection = direction;
 
     }
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction = direction * 5;
-        _rigidbody.velocity = direction;
+        _rigidbody.MovePosition(_rigidbody.position + direction * moveSpeed * Time.deltaTime);
+
     }
 }

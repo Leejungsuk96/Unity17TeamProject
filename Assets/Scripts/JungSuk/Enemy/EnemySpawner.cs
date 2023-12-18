@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
+    int count;
     Vector3 spawnPosition;
     float timer;
 
@@ -18,11 +18,11 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 0.2f)
+        if (timer > 1f && count <= 10)
         {
             Spawn();
             timer = 0;
-        }
+        }       
     }
 
     void Spawn()

@@ -7,21 +7,21 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
-                    "id": "c0903f6b-e59a-4a5a-8fb3-b292fb926394",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Select",
                     "type": "Button",
-                    "id": "c828ee69-a760-43a3-a726-b90de9415bad",
+                    "id": "c0903f6b-e59a-4a5a-8fb3-b292fb926394",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Select",
+                    "type": "Value",
+                    "id": "c828ee69-a760-43a3-a726-b90de9415bad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Look",
@@ -37,7 +37,7 @@
                 {
                     "name": "",
                     "id": "4f814d0c-380e-4755-aba8-8d33d6b036e7",
-                    "path": "<Mouse>/position",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
