@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DefaultAttackData", menuName = "UnitController/Attacks/Defualt", order = 0)]
 public class AttackSO1 : ScriptableObject
 {
-    [Header("Attack Info")]
-    public float size;
-    public float delay;
-    public float power;
-    public float speed;
-    public LayerMask target;    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-    [Header("Knock Back Info")]
-    public bool isOnKnockBack;
-    public float knockbackPower;
-    public float knockbackTime;
-
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

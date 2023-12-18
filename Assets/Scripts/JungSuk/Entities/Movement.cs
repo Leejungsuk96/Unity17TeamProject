@@ -7,10 +7,8 @@ using UnityEngine.EventSystems;
 public class Movement : MonoBehaviour
 {
     private CharacterController _controller;
-    private float moveSpeed = 5f;
     private Vector2 _movementDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
-
 
     private void Awake()
     {
@@ -39,7 +37,6 @@ public class Movement : MonoBehaviour
 
         _rigidbody.velocity = direction;
     }
-
 }
 
 
