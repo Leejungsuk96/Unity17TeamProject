@@ -11,6 +11,7 @@ public class PlayerTowerStatController : MonoBehaviour
     private Vector2 _aimDirection = Vector2.right;
 
     [SerializeField] private TextMeshProUGUI SelectedObjName;
+    [SerializeField] private TextMeshProUGUI DamageTxt;
     [SerializeField] private GameObject selectedObjUI;
 
 
@@ -59,6 +60,9 @@ public class PlayerTowerStatController : MonoBehaviour
             selectedObjUI.SetActive(true);
             GameObject clickObj = hit.transform.gameObject;
             SelectedObjName.text = clickObj.name;
+
+            TowerStatHandler towerStat = clickObj.GetComponent<TowerStatHandler>();
+            DamageTxt.text = towerStat.CurrentStats.attackSO.power.ToString();
         }
     }
 }
