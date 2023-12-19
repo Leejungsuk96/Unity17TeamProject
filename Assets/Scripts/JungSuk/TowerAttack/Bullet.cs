@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     private int speed = 5;
     private List<Bullet> bullets;
 
+    private RangedAttackData _attackData;
+
     public void SetTarget(Transform _target, int _damage)
     {
         target = _target;
@@ -31,6 +33,17 @@ public class Bullet : MonoBehaviour
         if (distance < 0f)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+        if (healthSystem != null)
+        {
+            healthSystem.ChangeHealth(-damager);
+            Debug.Log(healthSystem.CurrentHealth);
         }
     }
 }

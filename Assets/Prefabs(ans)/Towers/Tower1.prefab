@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4076151305622387050}
   - component: {fileID: 2826796827266266543}
   - component: {fileID: -8994797747668449055}
+  - component: {fileID: -5797504053380970749}
   m_Layer: 0
   m_Name: Tower1
   m_TagString: Untagged
@@ -104,7 +105,6 @@ MonoBehaviour:
     maxHealth: 100
     speed: 1
     attackSO: {fileID: 11400000, guid: 2dc6e4cc8289741e687715ef151679a8, type: 2}
-  statsModifiers: []
 --- !u!61 &2826796827266266543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +177,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5797504053380970749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918789762623912697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f92b8551a7b55d4db9c2462e169097f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerDamager: 20
+  TowerRange: 10
+  AttackDely: 2
+  bulletObj: {fileID: 0}

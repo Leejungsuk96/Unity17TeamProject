@@ -6,10 +6,8 @@ using UnityEngine.Events;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private float healthChangeDelay = .5f;
 
     private TowerStatHandler _statsHandler;
-    private float _timeSinceLastChange = float.MaxValue;
 
     public event Action OnDamage;
     public event Action OnHeal;
@@ -30,27 +28,10 @@ public class HealthSystem : MonoBehaviour
         CurrentHealth = _statsHandler.CurrentStats.maxHealth;
     }
 
-    private void Update()
-    {
-        if (_timeSinceLastChange < healthChangeDelay)
-        {
-            _timeSinceLastChange += Time.deltaTime;
-            if (_timeSinceLastChange >= healthChangeDelay)
-            {
-                OnInvincibilityEnd?.Invoke();
-            }
-        }
-    }
-
     public bool ChangeHealth(float change)
     {
-        if (change == 0 || _timeSinceLastChange < healthChangeDelay)
-        {
-            return false;
-        }
-
-        _timeSinceLastChange = 0f;
         CurrentHealth += change;
+        Debug.Log(CurrentHealth);
         CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth;
 
