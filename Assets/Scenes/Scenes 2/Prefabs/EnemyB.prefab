@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7141210319375975058}
   - component: {fileID: 1996604005520237265}
   - component: {fileID: 5562887856045773752}
-  - component: {fileID: 3296446729855766675}
+  - component: {fileID: 7501217374503271505}
   m_Layer: 0
   m_Name: EnemyB
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 8196781232858264205}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1996604005520237265
 BoxCollider2D:
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3296446729855766675
+--- !u!114 &7501217374503271505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,13 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7412839c8e3a88f488aaeb80f254b0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPos:
+  waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 4
 --- !u!1 &4149472035823896402
 GameObject:
   m_ObjectHideFlags: 0

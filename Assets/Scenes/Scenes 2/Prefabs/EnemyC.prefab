@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3029841705131794553}
   - component: {fileID: 5827860792695444323}
   - component: {fileID: 8413085158490617742}
-  - component: {fileID: 5077226192631486177}
+  - component: {fileID: 6408105313328800864}
   m_Layer: 0
   m_Name: EnemyC
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_Children:
   - {fileID: 5979258201248890169}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5827860792695444323
 BoxCollider2D:
@@ -191,7 +191,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5077226192631486177
+--- !u!114 &6408105313328800864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,10 +203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7412839c8e3a88f488aaeb80f254b0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPos:
+  waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 1
+  - {fileID: 0}

@@ -6805,30 +6805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyB
       objectReference: {fileID: 0}
-    - target: {fileID: 3296446729855766675, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
-      propertyPath: waypoints.Array.size
-      value: 5
+    - target: {fileID: 3272042263632147680, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3296446729855766675, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
-      propertyPath: waypoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1551105122}
-    - target: {fileID: 3296446729855766675, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
-      propertyPath: waypoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 1919328556}
-    - target: {fileID: 3296446729855766675, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
-      propertyPath: waypoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 918031143}
-    - target: {fileID: 3296446729855766675, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
-      propertyPath: waypoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 1976534339}
-    - target: {fileID: 3296446729855766675, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
-      propertyPath: waypoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 1786284160}
     - target: {fileID: 7141210319375975058, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6873,6 +6853,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7501217374503271505, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1551105122}
+    - target: {fileID: 7501217374503271505, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1919328556}
+    - target: {fileID: 7501217374503271505, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 918031143}
+    - target: {fileID: 7501217374503271505, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1976534339}
+    - target: {fileID: 7501217374503271505, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
+      propertyPath: waypoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 1786284160}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6930,33 +6930,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5077226192631486177, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
-      propertyPath: waypoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5077226192631486177, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
+    - target: {fileID: 6408105313328800864, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1551105122}
-    - target: {fileID: 5077226192631486177, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
+    - target: {fileID: 6408105313328800864, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1919328556}
-    - target: {fileID: 5077226192631486177, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
+      objectReference: {fileID: 1551105122}
+    - target: {fileID: 6408105313328800864, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 918031143}
-    - target: {fileID: 5077226192631486177, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
+      objectReference: {fileID: 1919328556}
+    - target: {fileID: 6408105313328800864, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1976534339}
-    - target: {fileID: 5077226192631486177, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
+      objectReference: {fileID: 918031143}
+    - target: {fileID: 6408105313328800864, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
       propertyPath: waypoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 1976534339}
+    - target: {fileID: 6408105313328800864, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
+      propertyPath: waypoints.Array.data[5]
       value: 
       objectReference: {fileID: 1786284160}
     - target: {fileID: 8765927748392735226, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
       propertyPath: m_Name
       value: EnemyC
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765927748392735226, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7112,6 +7116,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 109411681526390778, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
   m_PrefabInstance: {fileID: 2124510882}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1340253463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340253455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7412839c8e3a88f488aaeb80f254b0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1551105122}
+  - {fileID: 1919328556}
+  - {fileID: 918031143}
+  - {fileID: 1976534339}
+  - {fileID: 1786284160}
 --- !u!1 &1354734227
 GameObject:
   m_ObjectHideFlags: 0
@@ -9155,26 +9177,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1452495084}
     m_Modifications:
-    - target: {fileID: -792850801571925872, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
-      propertyPath: waypoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1551105122}
-    - target: {fileID: -792850801571925872, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
-      propertyPath: waypoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 1919328556}
-    - target: {fileID: -792850801571925872, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
-      propertyPath: waypoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 918031143}
-    - target: {fileID: -792850801571925872, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
-      propertyPath: waypoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 1976534339}
-    - target: {fileID: -792850801571925872, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
-      propertyPath: waypoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 1786284160}
     - target: {fileID: 109411681526390778, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9223,10 +9225,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyA
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1855217787132398944, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1855217787132398944, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1340253463}
   m_SourcePrefab: {fileID: 100100000, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
 --- !u!1 &2142037802
 GameObject:
