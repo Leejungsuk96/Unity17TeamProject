@@ -205,7 +205,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 348077355}
-  - component: {fileID: 348077356}
   m_Layer: 0
   m_Name: GameManager(ans)
   m_TagString: Untagged
@@ -227,20 +226,8 @@ Transform:
   m_Children:
   - {fileID: 974006663}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &348077356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348077354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40d13ff0f3cd4804b57a1c04e996173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &508954914
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,10 +986,7 @@ MonoBehaviour:
   - {fileID: 6918789762623912697, guid: 6675b36772093476a84849ab81c5bcfb, type: 3}
   - {fileID: 955041193648327487, guid: 84394c4cfac9a48a791759023b067a02, type: 3}
   summonsPositionRoot: {fileID: 782097663}
-  summonsTowersPositions:
-  - {fileID: 1409638777}
-  - {fileID: 1644719357}
-  - {fileID: 508954915}
+  summonsTowersPositions: []
   summonButton: {fileID: 1800873446}
 --- !u!1 &994313899
 GameObject:
@@ -1804,7 +1788,7 @@ Transform:
   - {fileID: 1384070163}
   - {fileID: 1939658089}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1556460618
 GameObject:
