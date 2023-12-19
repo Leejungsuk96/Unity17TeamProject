@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower2_RangedAttackData
   m_EditorClassIdentifier: 
   size: 0
-  delay: 0
-  power: 20
+  delay: 10
+  power: 10
   speed: 0
   target:
     serializedVersion: 2

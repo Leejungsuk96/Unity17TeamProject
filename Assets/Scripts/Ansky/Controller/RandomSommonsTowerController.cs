@@ -25,8 +25,6 @@ public class RandomSommonsTowerController : MonoBehaviour
 
     }
 
-
-
     public void SummonsRandomTower()
     {
         int randomTowerIndex = Random.Range(0, summonsTowersPrefabs.Count);

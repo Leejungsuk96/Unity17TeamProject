@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower_RangedAttackData
   m_EditorClassIdentifier: 
   size: 0
-  delay: 0
+  delay: 20
   power: 20
   speed: 0
   target:
