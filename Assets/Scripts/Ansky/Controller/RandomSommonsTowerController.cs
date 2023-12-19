@@ -20,18 +20,19 @@ public class RandomSommonsTowerController : MonoBehaviour
         {
             summonsTowersPositions.Add(summonsPositionRoot.GetChild(i));
         }
-
-        summonButton.onClick.AddListener(SummonsRandomTower);
-
     }
 
-
+    private void Start()
+    {
+        summonButton.onClick.AddListener(SummonsRandomTower);
+    }
 
     public void SummonsRandomTower()
     {
+        Debug.Log("aaa");
         int randomTowerIndex = Random.Range(0, summonsTowersPrefabs.Count);
         GameObject summonsTower = Instantiate(summonsTowersPrefabs[randomTowerIndex], summonsTowersPositions[0].position, Quaternion.identity);
-
+        summonsTower.transform.parent = transform;
         currentSommonsCount++;
     }
 }
