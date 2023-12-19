@@ -11,12 +11,18 @@ public class PlayerTowerStatController : MonoBehaviour
     private Vector2 _aimDirection = Vector2.right;
 
     [SerializeField] private TextMeshProUGUI SelectedObjName;
+    [SerializeField] private TextMeshProUGUI DamageTxt;
     [SerializeField] private GameObject selectedObjUI;
+
+    private TowerStatHandler towerStat;
+    private GameObject clickObj;
+    private Rigidbody2D _rigidbody;
 
 
     private void Awake()
     {
         _controller = GetComponent<TopDownTowerController>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         selectedObjUI.SetActive(false);
     }
 
@@ -24,6 +30,20 @@ public class PlayerTowerStatController : MonoBehaviour
     {
         _controller.OnLookEvent += OnAim;
         _controller.OnClickEvent += Click;
+        _controller.OnMoveEvent += Move;
+    }
+
+    private void Move()
+    {
+        if(towerStat == null || clickObj == null)
+        {
+            return;
+        }
+
+        if (selectedObjUI.activeSelf)
+        {
+            clickObj.transform.position = Vector2.MoveTowards(clickObj.transform.position, _aimDirection, towerStat.CurrentStats.speed * Time.deltaTime);
+        }
     }
 
     private void OnAim(Vector2 direction)
@@ -41,7 +61,8 @@ public class PlayerTowerStatController : MonoBehaviour
 
     private void Click()
     {
-
+        towerStat = new TowerStatHandler();
+        clickObj = new GameObject();
 
         if (selectedObjUI.activeSelf)
         {
@@ -57,8 +78,11 @@ public class PlayerTowerStatController : MonoBehaviour
         else if(hit.collider != null)
         {
             selectedObjUI.SetActive(true);
-            GameObject clickObj = hit.transform.gameObject;
+            clickObj = hit.transform.gameObject;
             SelectedObjName.text = clickObj.name;
+
+            towerStat = clickObj.GetComponent<TowerStatHandler>();
+            DamageTxt.text = towerStat.CurrentStats.attackSO.power.ToString();
         }
     }
 }
