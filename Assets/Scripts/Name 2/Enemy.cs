@@ -29,17 +29,9 @@ public class Enemy : MonoBehaviour
     {
         if (!enemyIsLive)
             return;
-        MovePath(); // 이동 로직
     }
 
-    private void MovePath()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, movePos[moveNum].transform.position, enemySpeed * Time.deltaTime);
-        if (transform.position == movePos[moveNum].transform.position)
-            moveNum++;
-        if (moveNum == movePos.Length)
-            moveNum = 0;
-    }
+    
 
     private void LateUpdate()
     {
@@ -48,8 +40,5 @@ public class Enemy : MonoBehaviour
         //플립 로직 구현
     }
 
-    private void OnEnable()
-    {
-        movePos = movePos;
-    }
+    
 }
