@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6752d7fe9829f428383bbc3177af7dc5, type: 3}
-  m_Name: Tower_RangedAttackData
+  m_Name: Tower2_RangedAttackData
   m_EditorClassIdentifier: 
   size: 0
-  delay: 20
-  power: 20
+  delay: 10
+  power: 10
   speed: 0
   target:
     serializedVersion: 2
