@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] Transform[] movePos;
+    int moveNum = 0;
     public float enemySpeed;
     public Rigidbody enemyTarget;
 
@@ -12,6 +15,10 @@ public class Enemy : MonoBehaviour
     Rigidbody2D enemyRigid;
     SpriteRenderer enemySpriter;
 
+    private void Start()
+    {
+        transform.position = movePos[moveNum].transform.position;
+    }
     void Awake()
     {
         enemyRigid = GetComponent<Rigidbody2D>();
@@ -22,8 +29,9 @@ public class Enemy : MonoBehaviour
     {
         if (!enemyIsLive)
             return;
-        //이동 로직 구현
     }
+
+    
 
     private void LateUpdate()
     {
@@ -31,4 +39,6 @@ public class Enemy : MonoBehaviour
             return;
         //플립 로직 구현
     }
+
+    
 }

@@ -39,5 +39,6 @@ public class EnemyMove : MonoBehaviour
             monsterNum = 0;
         }
     }
+
 }
 

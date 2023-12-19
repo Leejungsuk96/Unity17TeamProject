@@ -10,11 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 109411681526390778}
   - component: {fileID: 3342727903201823906}
-  - component: {fileID: -4894888282670233100}
-  - component: {fileID: 1194383312322641020}
   - component: {fileID: -248263835924303815}
-  - component: {fileID: -792850801571925872}
-  - component: {fileID: -1177063463477875663}
+  - component: {fileID: 5570616575724994017}
+  - component: {fileID: 2505014749198174582}
   m_Layer: 0
   m_Name: EnemyA
   m_TagString: Untagged
@@ -36,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 6123385438252807081}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3342727903201823906
 BoxCollider2D:
@@ -67,7 +65,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -83,35 +81,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-4894888282670233100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855217787132398944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45624efdcb6d4d3697974eacebb3cc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseStats:
-    statsChangeType: 0
-    maxHealth: 10
-    speed: 2
-    attackSO: {fileID: 11400000, guid: 2dc6e4cc8289741e687715ef151679a8, type: 2}
---- !u!114 &1194383312322641020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855217787132398944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d9bfededb9de48f5ac2371dbb34a9d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-248263835924303815
 Rigidbody2D:
   serializedVersion: 4
@@ -139,7 +108,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-792850801571925872
+--- !u!114 &5570616575724994017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,16 +117,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1855217787132398944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7412839c8e3a88f488aaeb80f254b0d9, type: 3}
+  m_Script: {fileID: 11500000, guid: be7855e92a1617c499a45f9e44ccd4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &-1177063463477875663
+  hp: 0
+--- !u!114 &2505014749198174582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,9 +130,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1855217787132398944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175ff3077ebaf492194adcc8b1958257, type: 3}
+  m_Script: {fileID: 11500000, guid: a0f4d9c75c795b04990aff25490f17e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &6297280928919277562
 GameObject:
   m_ObjectHideFlags: 0

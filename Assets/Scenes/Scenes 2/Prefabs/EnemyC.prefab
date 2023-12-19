@@ -95,7 +95,8 @@ GameObject:
   - component: {fileID: 3029841705131794553}
   - component: {fileID: 5827860792695444323}
   - component: {fileID: 8413085158490617742}
-  - component: {fileID: 5077226192631486177}
+  - component: {fileID: -202306174751886392}
+  - component: {fileID: -5175728789780300916}
   m_Layer: 0
   m_Name: EnemyC
   m_TagString: Untagged
@@ -148,7 +149,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -191,7 +192,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5077226192631486177
+--- !u!114 &-202306174751886392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,13 +201,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8765927748392735226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7412839c8e3a88f488aaeb80f254b0d9, type: 3}
+  m_Script: {fileID: 11500000, guid: be7855e92a1617c499a45f9e44ccd4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 1
+  hp: 0
+--- !u!114 &-5175728789780300916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765927748392735226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f4d9c75c795b04990aff25490f17e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  moveDirection: {x: 0, y: 0, z: 0}
