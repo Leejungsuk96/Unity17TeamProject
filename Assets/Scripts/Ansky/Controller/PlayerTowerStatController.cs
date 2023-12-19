@@ -61,8 +61,6 @@ public class PlayerTowerStatController : MonoBehaviour
 
     private void Click()
     {
-        towerStat = new TowerStatHandler();
-        clickObj = new GameObject();
 
         if (selectedObjUI.activeSelf)
         {

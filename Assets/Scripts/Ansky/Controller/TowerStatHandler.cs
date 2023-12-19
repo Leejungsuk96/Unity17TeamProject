@@ -9,7 +9,6 @@ public class TowerStatHandler : MonoBehaviour
 
     [SerializeField] private TowerStats baseStats;
     public TowerStats CurrentStats { get; private set; }
-    public List<TowerStats> statsModifiers = new List<TowerStats>();
 
     private void Awake()
     {
