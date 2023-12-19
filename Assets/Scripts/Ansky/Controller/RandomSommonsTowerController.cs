@@ -31,7 +31,7 @@ public class RandomSommonsTowerController : MonoBehaviour
     {
         Debug.Log("aaa");
         int randomTowerIndex = Random.Range(0, summonsTowersPrefabs.Count);
-        GameObject summonsTower = Instantiate(summonsTowersPrefabs[0], summonsTowersPositions[0].position, Quaternion.identity);
+        GameObject summonsTower = Instantiate(summonsTowersPrefabs[randomTowerIndex], summonsTowersPositions[0].position, Quaternion.identity);
         summonsTower.transform.parent = transform;
         currentSommonsCount++;
     }
