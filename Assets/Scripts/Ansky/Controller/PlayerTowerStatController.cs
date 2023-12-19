@@ -35,10 +35,13 @@ public class PlayerTowerStatController : MonoBehaviour
 
     private void Move()
     {
-        if(towerStat == null || clickObj == null)
+        if(clickObj == null)
         {
+            Debug.Log("moveerror");
             return;
         }
+
+        Debug.Log("move");
 
         if (selectedObjUI.activeSelf)
         {
