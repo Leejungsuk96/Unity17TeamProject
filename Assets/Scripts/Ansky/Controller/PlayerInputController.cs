@@ -7,7 +7,7 @@ public class PlayerInputController : TopDownTowerController
 {
     private Camera _camera;
 
-    private void Awake()
+    protected override void Awake()
     {
         _camera = Camera.main;
     }
@@ -23,5 +23,10 @@ public class PlayerInputController : TopDownTowerController
     public void OnClick(InputValue value)
     {
         IsClicking = value.isPressed;
+    }
+
+    public void OnMove(InputValue value)
+    {
+        IsMoving = value.isPressed;
     }
 }
