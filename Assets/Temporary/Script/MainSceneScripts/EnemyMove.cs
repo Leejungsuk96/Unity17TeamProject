@@ -10,8 +10,6 @@ public class EnemyMove : MonoBehaviour
     private float speed = 2;
     int monsterNum = 0;
 
-    private int currentWaypointIndex = 0;
-
     private void Start()
     {
         transform.position = waypoints[monsterNum].transform.position;

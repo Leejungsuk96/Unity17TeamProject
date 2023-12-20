@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -1939470726838079341}
   - component: {fileID: 1107072731656165580}
   - component: {fileID: -7292174321424955556}
+  - component: {fileID: 5188315185262521342}
   m_Layer: 6
   m_Name: EnemyA
   m_TagString: Enemy
@@ -123,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7855e92a1617c499a45f9e44ccd4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
 --- !u!114 &2505014749198174582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f4d9c75c795b04990aff25490f17e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &-1939470726838079341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +154,7 @@ MonoBehaviour:
     speed: 5
     spawnSpeed: 1
     attackSO: {fileID: 11400000, guid: d29d10cf552ce4f68ba656e808cf2c16, type: 2}
+  statsModifiers: []
 --- !u!114 &1107072731656165580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +177,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 175ff3077ebaf492194adcc8b1958257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5188315185262521342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855217787132398944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e8262a6ff9646dd8005b2c3b737a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6297280928919277562
