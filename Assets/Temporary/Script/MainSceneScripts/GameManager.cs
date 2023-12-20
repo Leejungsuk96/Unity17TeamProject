@@ -18,11 +18,13 @@ public class GameManager : MonoBehaviour
     private int GameoverEnemyCount = 20;
 
     public static GameManager instance;
-    public PoolManager pool; // ���� ����
+    public PoolManager pool;
 
     private EnemySpawneController _enemy1;
     private EnemySpawneController _enemy2;
     private EnemySpawneController _enemy3;
+
+    private
 
     void Awake()
     {
