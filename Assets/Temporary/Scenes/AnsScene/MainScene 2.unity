@@ -2153,7 +2153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1855217787132398944, guid: 1b39a668222dda941a8dcf74e44da5b3, type: 3}
-  spawnTime: 0.5
   wayPoints:
   - {fileID: 1727886430}
   - {fileID: 1564363921}
@@ -2243,7 +2242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3272042263632147680, guid: c0e3aafcdd04ab543a6d8e33fd1ca73d, type: 3}
-  spawnTime: 1
   wayPoints:
   - {fileID: 1727886430}
   - {fileID: 1564363921}
@@ -7632,7 +7630,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8765927748392735226, guid: 2f92bdaf6a527e14fb96171e363d3780, type: 3}
-  spawnTime: 2
   wayPoints:
   - {fileID: 1727886430}
   - {fileID: 1564363921}
@@ -8476,8 +8473,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926619391}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 380, y: 640, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
