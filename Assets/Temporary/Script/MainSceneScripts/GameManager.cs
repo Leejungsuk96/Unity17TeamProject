@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public GameObject obj2;
     public GameObject obj3;
 
+    public event Action OnGameOver;
+
     public TextMeshProUGUI EnemyCountTxt;
 
     private int enemyCount;
+    private int GameoverEnemyCount = 20;
 
     public static GameManager instance;
     public PoolManager pool; // ���� ����
@@ -35,6 +38,14 @@ public class GameManager : MonoBehaviour
         EnemyCountUIUpdate();
     }
 
+    private void FixedUpdate()
+    {
+       if(enemyCount > GameoverEnemyCount)
+        {
+            CallGameOver();
+        }
+    }
+
     private void EnemyCountUIUpdate()
     {
         EnemyCountTxt.text = enemyCount.ToString();
@@ -43,5 +54,10 @@ public class GameManager : MonoBehaviour
     private void EnemyCount()
     {
         enemyCount = _enemy1.count + _enemy2.count + _enemy3.count;
+    }
+
+    private void CallGameOver()
+    {
+        OnGameOver?.Invoke();
     }
 }
