@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 0
   delay: 1
-  power: 20
+  power: 100
   speed: 0
   target:
     serializedVersion: 2
@@ -22,7 +22,7 @@ MonoBehaviour:
   bulletNameTag: Bullet
   duration: 1
   spread: 1
-  range: 0
+  range: 20
   numberofProjectilesPerShot: 1
   multipleProjectilesAngel: 1
   projectileColor: {r: 0, g: 0, b: 0, a: 0}
