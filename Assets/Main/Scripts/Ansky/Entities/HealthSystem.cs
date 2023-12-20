@@ -12,7 +12,6 @@ public class HealthSystem : MonoBehaviour
     public event Action OnDamage;
     public event Action OnHeal;
     public event Action OnDeath;
-    public event Action OnInvincibilityEnd;
 
     public float CurrentHealth { get; private set; }
 
