@@ -19,9 +19,10 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 64
-  bulletNameTag: 
-  duration: 0
-  spread: 0
-  numberofProjectilesPerShot: 0
-  multipleProjectilesAngel: 0
+  bulletNameTag: Bullet
+  duration: 1
+  spread: 10
+  range: 10
+  numberofProjectilesPerShot: 10
+  multipleProjectilesAngel: 10
   projectileColor: {r: 0, g: 0, b: 0, a: 0}

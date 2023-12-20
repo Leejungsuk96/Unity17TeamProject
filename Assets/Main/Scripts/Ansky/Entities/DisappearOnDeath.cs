@@ -29,7 +29,7 @@ public class DisappearOnDeath : MonoBehaviour
         {
             component.enabled = false;
         }
-
+        
         Destroy(gameObject, 2f);
     }
 }
