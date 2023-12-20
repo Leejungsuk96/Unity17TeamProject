@@ -5,11 +5,19 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
-    public int TowerDamager = 20; // °ø°Ý·Â
-    public float TowerRange = 10f; // °ø°Ý¹üÀ§
-    public float AttackDely = 2f;  // ¸Å °ø°Ý°£ µô·¹ÀÌ
-    private float CurrentDely = 0f; // ÇöÀç µô·¹ÀÌ °è»ê
+    private TowerStatHandler _stats;
+    private RangedAttackData _attackData;
+
+    public int TowerDamager = 20; // ï¿½ï¿½ï¿½Ý·ï¿½
+    public float TowerRange = 10f; // ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½
+    //public float AttackDely = 2f;  // ï¿½ï¿½ ï¿½ï¿½ï¿½Ý°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private float CurrentDely = 0f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     public GameObject bulletObj;
+
+    private void Awake()
+    {
+        _stats = GetComponent<TowerStatHandler>();
+    }
 
     private void Update()
     {
@@ -17,7 +25,7 @@ public class TowerAttack : MonoBehaviour
         if(CurrentDely <= 0f)
         {
             Attack();
-            CurrentDely = AttackDely;
+            CurrentDely = _stats.CurrentStats.attackSO.delay;
         }
     }
 
