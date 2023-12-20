@@ -207,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7855e92a1617c499a45f9e44ccd4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
 --- !u!114 &-5175728789780300916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,8 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f4d9c75c795b04990aff25490f17e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &1184020088951169871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,9 +233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 0
-    maxHealth: 20
-    speed: 0
-    attackSO: {fileID: 0}
+    maxHealth: 50
+    speed: 3
+    spawnSpeed: 6
+    attackSO: {fileID: 11400000, guid: d29d10cf552ce4f68ba656e808cf2c16, type: 2}
 --- !u!114 &1394164254406848304
 MonoBehaviour:
   m_ObjectHideFlags: 0

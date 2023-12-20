@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class EnemySpawneController : MonoBehaviour
 {
-    // enemy ����� �̵���� ���󰡰�
     [SerializeField] private GameObject enemyPrefab; // �� ������
-    [SerializeField] private float spawnTime; // ���� Ÿ��
     [SerializeField] private Transform[] wayPoints;  // ���� �������� �̵� ���
+    private TowerStatHandler _stats;
 
     private void Awake()
     {
-        // �� ���� �ڷ�ƾ �Լ� ȣ��
+        _stats = GetComponent<TowerStatHandler>();
+    }
+
+    private void Start()
+    {
         StartCoroutine("spawnEnemy");
     }
 
@@ -25,7 +28,7 @@ public class EnemySpawneController : MonoBehaviour
 
             enemy.Setup(wayPoints); // wayPoint ������ �Ű������� Setup() ȣ��
 
-            yield return new WaitForSeconds(spawnTime);     // spawnTime ���� ���
+            yield return new WaitForSeconds(_stats.CurrentStats.spawnSpeed);     // spawnTime ���� ���
         }
     }
 }

@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 0.0f;
-    [SerializeField] private Vector3 moveDirection = Vector3.zero;
 
-    public float MoveSpeed => moveSpeed;
+    private Vector3 moveDirection = Vector3.zero;
+    private TowerStatHandler _stats;
+    private float moveSpeed;
+
+    private void Awake()
+    {
+        _stats = GetComponent<TowerStatHandler>();
+    }
+
+    private void Start()
+    {
+        moveSpeed = _stats.CurrentStats.speed;
+    }
 
     private void Update()
     {

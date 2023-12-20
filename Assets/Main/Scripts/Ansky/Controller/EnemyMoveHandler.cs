@@ -7,11 +7,17 @@ public class EnemyMoveHandler : MonoBehaviour
     private int wayPointCount; // �̵���� ����
     private Transform[] wayPoints; // �̵���� ����
     private int currentIndex = 0; // ���� ��ǥ���� �ε���
-    private EnemyMovement movement2D; // ������Ʈ �̵�����
+    private EnemyMovement movement; // ������Ʈ �̵�����
+    private TowerStatHandler _stat;
+
+    private void Awake()
+    {
+        _stat = GetComponent<TowerStatHandler>();
+    }
 
     public void Setup(Transform[] wayPoins)
     {
-        movement2D = GetComponent<EnemyMovement>();
+        movement = GetComponent<EnemyMovement>();
 
         //�� �̵���� WayPoints ���� ����
         wayPointCount = wayPoins.Length;
@@ -35,7 +41,7 @@ public class EnemyMoveHandler : MonoBehaviour
             //transform.Rotate(Vector3.forward * 10);
             
             // �� �����ӿ� 0.02f���� ũ�� �����̱� ������ if���ǹ��� �ɸ��� �ʰ� ��� Ż���ϴ� �� ����
-            if(Vector3.Distance(transform.position, wayPoints[currentIndex].position) < 0.01f * movement2D.MoveSpeed)
+            if(Vector3.Distance(transform.position, wayPoints[currentIndex].position) < 0.01f * _stat.CurrentStats.speed)
             {
                 NextMoveTo();   // ���� �̵� ����
             }
@@ -54,7 +60,7 @@ public class EnemyMoveHandler : MonoBehaviour
             // �̵� ���� ���� 
             currentIndex++;
             Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
-            movement2D.MoveTo(direction);
+            movement.MoveTo(direction);
         }
         // ������ wayPoint �϶�
         else
