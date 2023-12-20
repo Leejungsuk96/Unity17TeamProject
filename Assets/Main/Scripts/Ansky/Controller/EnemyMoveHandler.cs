@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyMoveHandler : MonoBehaviour
 {
-    // enemy ���� ����, �̵���� ���� ����
-    [SerializeField] public float hp = 0.0f; // ü��
     private int wayPointCount; // �̵���� ����
     private Transform[] wayPoints; // �̵���� ����
     private int currentIndex = 0; // ���� ��ǥ���� �ε���
