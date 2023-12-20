@@ -6,13 +6,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Transform target;
-    private int damager;
-    private int speed = 20;
+    private float damager;
+    private int speed = 10;
     private List<Bullet> bullets;
 
     private RangedAttackData _attackData;
 
-    public void SetTarget(Transform _target, int _damage)
+    public void SetTarget(Transform _target, float _damage)
     {
         target = _target;
         damager = _damage;
