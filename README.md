@@ -9,6 +9,12 @@ IDE: VS Code<br/><br/>
 <br/><br/>
 ## 🧡Wireframe
 ![image](https://github.com/Leejungsuk96/Unity17TeamProject/assets/114940193/92651874-950d-48a4-9d6f-0b3e6aee97fb)
+<br/><br/>
+타워 로직<br/><br/>
+![image](https://github.com/Leejungsuk96/Unity17TeamProject/assets/114940193/b26d94f9-7409-4b15-981c-e77cf7be86f7)
+<br/><br/>
+적 로직<br/><br/>
+![image](https://github.com/Leejungsuk96/Unity17TeamProject/assets/114940193/d1e6a50a-1e69-4d69-8027-1fec206f26d8)
 
 
 <br/><br/>
