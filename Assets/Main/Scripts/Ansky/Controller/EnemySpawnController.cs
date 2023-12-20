@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class EnemySpawneController : MonoBehaviour
 {
-    // enemy ����� �̵���� ���󰡰�
     [SerializeField] private GameObject enemyPrefab; // �� ������
-    [SerializeField] private float spawnTime; // ���� Ÿ��
     [SerializeField] private Transform[] wayPoints;  // ���� �������� �̵� ���
 
     private void Awake()
     {
-        // �� ���� �ڷ�ƾ �Լ� ȣ��
         StartCoroutine("spawnEnemy");
     }
 
@@ -22,10 +19,9 @@ public class EnemySpawneController : MonoBehaviour
             GameObject clone = Instantiate(enemyPrefab);    // �� ������Ʈ ����
             clone.transform.parent = transform;
             EnemyMoveHandler enemy = clone.GetComponent<EnemyMoveHandler>();  // ��� ������ ���� Monster ������Ʈ
-
+            TowerStatHandler _stats = clone.GetComponent<TowerStatHandler>();
             enemy.Setup(wayPoints); // wayPoint ������ �Ű������� Setup() ȣ��
-
-            yield return new WaitForSeconds(spawnTime);     // spawnTime ���� ���
+            yield return new WaitForSeconds(_stats.CurrentStats.spawnSpeed);     // spawnTime ���� ���
         }
     }
 }
