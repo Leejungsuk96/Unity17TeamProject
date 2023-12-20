@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using UnityEngine;
+using System.Collections;
+using TMPro;
 
 public class VictoryDefeatCondition : GameManager
 {
@@ -8,6 +10,29 @@ public class VictoryDefeatCondition : GameManager
     private int CurrentEnemyCount = 0;
     private bool GameEnded = false;
     private string SaveFile;
+
+
+    //protected override void EnemyCount()
+    //{
+    //    base.EnemyCount();
+
+    //    if (enemyCount >= 20)
+    //    {
+    //        GameEnd(true);
+    //    }
+    //}
+
+    //public override void GameEnd(bool victory)
+    //{
+    //    base.GameEnd(victory);
+
+    //    if (victory)
+    //    {
+            
+    //    }
+
+    //}
+
 
     private void Start()
     {
@@ -44,16 +69,16 @@ public class VictoryDefeatCondition : GameManager
         }
     }
 
-    private void GameEnd()
-    {
-        GameEnded = true;
-        // 여기에서 원하는 종료 동작을 수행하면 됩니다.
-        Debug.Log("Game Over");
-    }
+    //public override void GameEnd()
+    //{
+    //    base.GameEnd();
+    //    SaveGame();
+    //}
+
 
     [Serializable]
     private class GameData
     {
-        // 저장할 데이터 추가(플레이어체력,위치,점수 등)
+        // 추가적인 저장할 데이터가 있다면 여기에 추가
     }
 }
