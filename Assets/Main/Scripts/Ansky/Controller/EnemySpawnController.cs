@@ -6,7 +6,6 @@ public class EnemySpawneController : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab; // �� ������
     [SerializeField] private Transform[] wayPoints;  // ���� �������� �̵� ���
-    public int count;
 
     private void Awake()
     {
@@ -18,7 +17,6 @@ public class EnemySpawneController : MonoBehaviour
         while (true)
         {
             GameObject clone = Instantiate(enemyPrefab);    // �� ������Ʈ ����
-            count++;
             clone.transform.parent = transform;
             EnemyMoveHandler enemy = clone.GetComponent<EnemyMoveHandler>();  // ��� ������ ���� Monster ������Ʈ
             TowerStatHandler _stats = clone.GetComponent<TowerStatHandler>();
