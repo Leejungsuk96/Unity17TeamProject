@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private int enemyCount;
 
     public static GameManager instance;
-    public PoolManager pool; // ���� ����
+    public PoolManager pool;
 
     private EnemySpawneController _enemy1;
     private EnemySpawneController _enemy2;
