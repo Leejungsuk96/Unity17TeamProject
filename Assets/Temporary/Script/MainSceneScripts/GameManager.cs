@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI EnemyCountTxt;
 
     private int enemyCount;
-    private int GameoverEnemyCount = 20;
+    protected int GameoverEnemyCount = 20;
 
     public static GameManager instance;
     public PoolManager pool; // ���� ����
@@ -59,5 +59,9 @@ public class GameManager : MonoBehaviour
     private void CallGameOver()
     {
         OnGameOver?.Invoke();
+    }
+    public virtual void GameEnd()
+    {
+        Time.timeScale = 0f;
     }
 }

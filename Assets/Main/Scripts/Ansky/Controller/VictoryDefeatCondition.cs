@@ -1,8 +1,6 @@
 using System;
 using System.IO;
 using UnityEngine;
-using System.Collections;
-using TMPro;
 
 public class VictoryDefeatCondition : GameManager
 {
@@ -10,42 +8,35 @@ public class VictoryDefeatCondition : GameManager
     private int CurrentEnemyCount = 0;
     private bool GameEnded = false;
     private string SaveFile;
+    private GameObject EndingWindow;
 
 
-    //protected override void EnemyCount()
-    //{
-    //    base.EnemyCount();
 
-    //    if (enemyCount >= 20)
-    //    {
-    //        GameEnd(true);
-    //    }
-    //}
+    private void Awake()
+    {
+        SaveFile = Path.Combine(Application.persistentDataPath, "GameSave.json");
+        LoadGame();
 
-    //public override void GameEnd(bool victory)
-    //{
-    //    base.GameEnd(victory);
-
-    //    if (victory)
-    //    {
-            
-    //    }
-
-    //}
+        EndingWindow = GameObject.FindWithTag("EndingWindow");
+        if (EndingWindow != null)
+        {
+            EndingWindow.SetActive(false);
+        }
+    }
 
 
     private void Start()
     {
-        SaveFile = Path.Combine(Application.persistentDataPath, "GameSave.json");
-        LoadGame();
+        GameManager.instance.OnGameOver += GameEnd;
     }
+
 
     public void EnemySpawned()
     {
         if (!GameEnded)
         {
             CurrentEnemyCount++;
-            if (CurrentEnemyCount > EnemyCountLimit)
+            if (CurrentEnemyCount > GameoverEnemyCount)
             {
                 GameEnd();
             }
@@ -69,11 +60,21 @@ public class VictoryDefeatCondition : GameManager
         }
     }
 
-    //public override void GameEnd()
-    //{
-    //    base.GameEnd();
-    //    SaveGame();
-    //}
+    public override void GameEnd()
+    {
+        SaveGame();
+        GameEnded = true;
+        ShowEndingWindow();
+        base.GameEnd();
+    }
+
+    private void ShowEndingWindow()
+    {
+        if (EndingWindow != null)
+        {
+            EndingWindow.SetActive(true);
+        }
+    }
 
 
     [Serializable]
