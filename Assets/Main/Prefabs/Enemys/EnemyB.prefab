@@ -152,8 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 0
-    maxHealth: 10
-    speed: 8
+    maxHealth: 1
+    speed: 10
     spawnSpeed: 1.5
     attackSO: {fileID: 11400000, guid: d29d10cf552ce4f68ba656e808cf2c16, type: 2}
   statsModifiers: []

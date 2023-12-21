@@ -10,7 +10,12 @@ public class Bullet : MonoBehaviour
     private int speed = 10;
     private List<Bullet> bullets;
 
-    private RangedAttackData _attackData;
+    private TowerStatHandler _stats;
+
+    private void Awake()
+    {
+        _stats = GetComponent<TowerStatHandler>();
+    }
 
     public void SetTarget(Transform _target, float _damage)
     {

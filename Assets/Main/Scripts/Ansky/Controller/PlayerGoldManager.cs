@@ -15,6 +15,11 @@ public class PlayerGoldManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        playerGold += 40;
+    }
+
     private void Update()
     {
         gold.text = playerGold.ToString();

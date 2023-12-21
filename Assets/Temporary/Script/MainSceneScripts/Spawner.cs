@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        spawnPoint = GetComponentsInChildren<Transform>(); // ½ºÆù Æ÷ÀÎÆ®¿¡¼­ ¸ó½ºÅÍ »ý¼º
+        spawnPoint = GetComponentsInChildren<Transform>(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     // Update is called once per frame
@@ -20,16 +20,16 @@ public class Spawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer > 1f) // ¸ó½ºÅÍ ½ºÆù ½Ã°£
+        if(timer > 1f) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
         {
             timer = 0;
             Spwan();
         }
     }
 
-    void Spwan() // ¸ó½ºÅÍ ½ºÆù
+    void Spwan() // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
-        GameObject enemy = GameManager.instance.pool.Get(Random.Range(0,3));
+        GameObject enemy = GameManager.instance.pool.Get(Random.Range(0,4));
         enemy.transform.position = spawnPoint[1].position;
     }
 }

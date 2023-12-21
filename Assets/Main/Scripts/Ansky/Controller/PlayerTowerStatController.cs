@@ -12,17 +12,19 @@ public class PlayerTowerStatController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI SelectedObjName;
     [SerializeField] private TextMeshProUGUI DamageTxt;
+    [SerializeField] private TextMeshProUGUI DelayTxt;
+    [SerializeField] private TextMeshProUGUI RangeTxt;
+    [SerializeField] private TextMeshProUGUI BulletTxt;
     [SerializeField] private GameObject selectedObjUI;
 
-    private TowerStatHandler towerStat;
+    private TowerStatHandler _stats;
+    private RangedAttackData _attackData;
     private GameObject clickObj;
-    private Rigidbody2D _rigidbody;
 
 
     private void Awake()
     {
         _controller = GetComponent<TopDownTowerController>();
-        _rigidbody = GetComponent<Rigidbody2D>();
         selectedObjUI.SetActive(false);
     }
 
@@ -37,15 +39,13 @@ public class PlayerTowerStatController : MonoBehaviour
     {
         if(clickObj == null)
         {
-            Debug.Log("moveerror");
             return;
         }
 
-        Debug.Log("move");
 
         if (selectedObjUI.activeSelf)
         {
-            clickObj.transform.position = Vector2.MoveTowards(clickObj.transform.position, _aimDirection, towerStat.CurrentStats.speed * Time.deltaTime);
+            clickObj.transform.position = Vector2.MoveTowards(clickObj.transform.position, _aimDirection, _stats.CurrentStats.speed * Time.deltaTime);
         }
     }
 
@@ -65,25 +65,32 @@ public class PlayerTowerStatController : MonoBehaviour
     private void Click()
     {
 
-        if (selectedObjUI.activeSelf)
-        {
-            selectedObjUI.SetActive(false);
-        }
+        NullClick();
 
         RaycastHit2D hit = Physics2D.Raycast(_aimDirection, Vector2.zero, 0f);
-
-        if (hit.collider == null)
+        if(hit.collider == null)
         {
             NullClick();
         }
         else if(hit.collider != null)
         {
-            selectedObjUI.SetActive(true);
             clickObj = hit.transform.gameObject;
-            SelectedObjName.text = clickObj.name;
+            _stats = clickObj.GetComponent<TowerStatHandler>();
+            _attackData = _stats.CurrentStats.attackSO as RangedAttackData;
 
-            towerStat = clickObj.GetComponent<TowerStatHandler>();
-            DamageTxt.text = towerStat.CurrentStats.attackSO.power.ToString();
+            if(clickObj.tag == "Player")
+            {
+                selectedObjUI.SetActive(true);
+                SelectedObjName.text = clickObj.name;
+                DamageTxt.text = _stats.CurrentStats.attackSO.power.ToString();
+                DelayTxt.text = _stats.CurrentStats.attackSO.delay.ToString();
+                RangeTxt.text = _attackData.range.ToString();
+                BulletTxt.text = _attackData.numberofProjectilesPerShot.ToString();
+            }
+            else
+            {
+                NullClick();
+            }
         }
     }
 }

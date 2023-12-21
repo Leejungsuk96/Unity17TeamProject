@@ -3030,7 +3030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0.8627451}
+  m_Color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0.9411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8287,6 +8287,14 @@ MonoBehaviour:
   summonsTowersPrefabs:
   - {fileID: 6918789762623912697, guid: 6675b36772093476a84849ab81c5bcfb, type: 3}
   - {fileID: 955041193648327487, guid: 84394c4cfac9a48a791759023b067a02, type: 3}
+  - {fileID: 955041193648327487, guid: 83caecb798da34cffacccf0ee53e9a7f, type: 3}
+  - {fileID: 6918789762623912697, guid: 6675b36772093476a84849ab81c5bcfb, type: 3}
+  - {fileID: 955041193648327487, guid: 84394c4cfac9a48a791759023b067a02, type: 3}
+  - {fileID: 955041193648327487, guid: 83caecb798da34cffacccf0ee53e9a7f, type: 3}
+  - {fileID: 6918789762623912697, guid: 6675b36772093476a84849ab81c5bcfb, type: 3}
+  - {fileID: 955041193648327487, guid: 84394c4cfac9a48a791759023b067a02, type: 3}
+  - {fileID: 955041193648327487, guid: 83caecb798da34cffacccf0ee53e9a7f, type: 3}
+  - {fileID: 955041193648327487, guid: 70f763247356b493fafd170b0db89050, type: 3}
   summonsPositionRoot: {fileID: 631189732}
   summonsTowersPositions: []
   summonButton: {fileID: 733533470}
