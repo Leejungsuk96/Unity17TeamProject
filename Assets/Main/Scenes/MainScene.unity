@@ -12060,6 +12060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e18d891fb4f8444887f5675ecd9d87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyCountLimit: 20
 --- !u!1 &1806930464
 GameObject:
   m_ObjectHideFlags: 0
@@ -12071,7 +12072,7 @@ GameObject:
   - component: {fileID: 1806930465}
   m_Layer: 0
   m_Name: EndingScene
-  m_TagString: Untagged
+  m_TagString: EndingWindow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,14 +6,14 @@ public class VictoryDefeatCondition : MonoBehaviour
     //public int EnemyCountLimit = 20;
     //private int CurrentEnemyCount = 0;
     //private bool GameEnded = false;
-    //private string SaveFile;
+    private string SaveFile;
     private GameObject EndingWindow;
 
 
     private void Awake()
     {
-        //SaveFile = Path.Combine(Application.persistentDataPath, "GameSave.json");
-        //LoadGame();
+        SaveFile = Path.Combine(Application.persistentDataPath, "GameSave.json");
+        LoadGame();
         EndingWindow = GameObject.FindWithTag("EndingWindow");
         if (EndingWindow != null)
         {
@@ -23,6 +23,7 @@ public class VictoryDefeatCondition : MonoBehaviour
     private void Start()
     {
         GameManager.instance.OnGameOver += GameEnd;
+        LoadGame();
     }
     //public void EnemySpawned()
     //{
@@ -36,30 +37,29 @@ public class VictoryDefeatCondition : MonoBehaviour
     //    }
     //}
 
-    //private void SaveGame()
-    //{
-    //    GameData gameData = new GameData
-    //    {
-    //        //savedEnemyCount = CurrentEnemyCount,
-    //        savedPlayerGold = PlayerGoldManager.instance.playerGold
-    //    };
-    //    string jsonString = JsonUtility.ToJson(gameData);
-    //    File.WriteAllText(SaveFile, jsonString);
-    //}
-    //private void LoadGame()
-    //{
-    //    if (File.Exists(SaveFile))
-    //    {
-    //        string jsonString = File.ReadAllText(SaveFile);
-    //        GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
-    //        //CurrentEnemyCount = gameData.savedEnemyCount;
-    //        PlayerGoldManager.instance.playerGold = gameData.savedPlayerGold;
-    //    }
-    //}
+    private void SaveGame()
+    {
+        GameData gameData = new GameData
+        {
+            //savedPlayerGold = PlayerGoldManager.instance.GetPlayerGold()
+        };
+        string jsonString = JsonUtility.ToJson(gameData);
+        File.WriteAllText(SaveFile, jsonString);
+    }
+    private void LoadGame()
+    {
+        if (File.Exists(SaveFile))
+        {
+            string jsonString = File.ReadAllText(SaveFile);
+            GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
+
+            //PlayerGoldManager.instance.SetPlayerGold(gameData.savedPlayerGold);
+        }
+    }
 
     private void GameEnd()
     {
-        //SaveGame();
+        SaveGame();
         //GameEnded = true;
         ShowEndingWindow();
         Time.timeScale = 0f;
@@ -72,10 +72,9 @@ public class VictoryDefeatCondition : MonoBehaviour
             EndingWindow.SetActive(true);
         }
     }
-    //[Serializable]
-    //private class GameData
-    //{
-    //    public int savedEnemyCount;
-    //    public int savedPlayerGold;
-    //}
+    [Serializable]
+    private class GameData
+    {
+        public int savedPlayerGold;
+    }
 }
