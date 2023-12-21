@@ -1,66 +1,60 @@
 using System;
 using System.IO;
 using UnityEngine;
-
-public class VictoryDefeatCondition : MonoBehaviour
+public class VictoryDefeatCondition : GameManager
 {
+    public int EnemyCountLimit = 20;
     private int CurrentEnemyCount = 0;
     private bool GameEnded = false;
     private string SaveFile;
     private GameObject EndingWindow;
-
-    private void Start()
+    private void Awake()
     {
         SaveFile = Path.Combine(Application.persistentDataPath, "GameSave.json");
         LoadGame();
-
-        EndingWindow = GameObject.Find("Canvas/EndingWindow");
+        EndingWindow = GameObject.FindWithTag("EndingWindow");
         if (EndingWindow != null)
         {
             EndingWindow.SetActive(false);
         }
     }
-
-    public void EnemySpawned(GameObject enemyInstance)
+    private void Start()
     {
-        Debug.Log("Enemy Spawned: " + enemyInstance.tag);
-
-        if (!GameEnded && enemyInstance.CompareTag("Enemy"))
+        GameManager.instance.OnGameOver += GameEnd;
+    }
+    public void EnemySpawned()
+    {
+        if (!GameEnded)
         {
-            int enemyWeight = GetEnemyWeight(enemyInstance);
-            CurrentEnemyCount += enemyWeight;
-
-            if (CurrentEnemyCount >= 10)
+            CurrentEnemyCount++;
+            if (CurrentEnemyCount > GameoverEnemyCount)
             {
                 GameEnd();
             }
         }
     }
-
-    private int GetEnemyWeight(GameObject enemyInstance)
+    private void SaveGame()
     {
-        if (enemyInstance.CompareTag("EnemyA"))
-        {
-            return 1;
-        }
-        else if (enemyInstance.CompareTag("EnemyB"))
-        {
-            return 2;
-        }
-        else if (enemyInstance.CompareTag("EnemyC"))
-        {
-            return 3;
-        }
-        return 0;
+        GameData gameData = new GameData(/* 저장 데이터 */);
+        string jsonString = JsonUtility.ToJson(gameData);
+        File.WriteAllText(SaveFile, jsonString);
     }
-
-    private void GameEnd()
+    private void LoadGame()
     {
+        if (File.Exists(SaveFile))
+        {
+            string jsonString = File.ReadAllText(SaveFile);
+            GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
+            // 게임 데이터 적용
+        }
+    }
+    public override void GameEnd()
+    {
+        SaveGame();
         GameEnded = true;
         ShowEndingWindow();
-        SaveGame();
+        base.GameEnd();
     }
-
     private void ShowEndingWindow()
     {
         if (EndingWindow != null)
@@ -68,27 +62,9 @@ public class VictoryDefeatCondition : MonoBehaviour
             EndingWindow.SetActive(true);
         }
     }
-
-    private void SaveGame()
-    {
-        GameData gameData = new GameData(/* 저장 데이터 */);
-        string jsonString = JsonUtility.ToJson(gameData);
-        File.WriteAllText(SaveFile, jsonString);
-    }
-
-    private void LoadGame()
-    {
-        if (File.Exists(SaveFile))
-        {
-            string jsonString = File.ReadAllText(SaveFile);
-            GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
-            //게임 데이터 적용
-        }
-    }
-
     [Serializable]
     private class GameData
     {
-        //저장할 데이터 추가(플레이어체력,위치,점수 등)
+        // 추가적인 저장할 데이터가 있다면 여기에 추가
     }
 }
