@@ -1,71 +1,68 @@
 using System;
 using System.IO;
 using UnityEngine;
-
-public class VictoryDefeatCondition : GameManager
+public class VictoryDefeatCondition : MonoBehaviour
 {
-    public int EnemyCountLimit = 20;
-    private int CurrentEnemyCount = 0;
-    private bool GameEnded = false;
-    private string SaveFile;
+    //public int EnemyCountLimit = 20;
+    //private int CurrentEnemyCount = 0;
+    //private bool GameEnded = false;
+    //private string SaveFile;
     private GameObject EndingWindow;
-
 
 
     private void Awake()
     {
-        SaveFile = Path.Combine(Application.persistentDataPath, "GameSave.json");
-        LoadGame();
-
+        //SaveFile = Path.Combine(Application.persistentDataPath, "GameSave.json");
+        //LoadGame();
         EndingWindow = GameObject.FindWithTag("EndingWindow");
         if (EndingWindow != null)
         {
             EndingWindow.SetActive(false);
         }
     }
-
-
     private void Start()
     {
         GameManager.instance.OnGameOver += GameEnd;
     }
+    //public void EnemySpawned()
+    //{
+    //    if (!GameEnded)
+    //    {
+    //        CurrentEnemyCount++;
+    //        if (CurrentEnemyCount > GameoverEnemyCount)
+    //        {
+    //            GameEnd();
+    //        }
+    //    }
+    //}
 
+    //private void SaveGame()
+    //{
+    //    GameData gameData = new GameData
+    //    {
+    //        //savedEnemyCount = CurrentEnemyCount,
+    //        savedPlayerGold = PlayerGoldManager.instance.playerGold
+    //    };
+    //    string jsonString = JsonUtility.ToJson(gameData);
+    //    File.WriteAllText(SaveFile, jsonString);
+    //}
+    //private void LoadGame()
+    //{
+    //    if (File.Exists(SaveFile))
+    //    {
+    //        string jsonString = File.ReadAllText(SaveFile);
+    //        GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
+    //        //CurrentEnemyCount = gameData.savedEnemyCount;
+    //        PlayerGoldManager.instance.playerGold = gameData.savedPlayerGold;
+    //    }
+    //}
 
-    public void EnemySpawned()
+    private void GameEnd()
     {
-        if (!GameEnded)
-        {
-            CurrentEnemyCount++;
-            if (CurrentEnemyCount > GameoverEnemyCount)
-            {
-                GameEnd();
-            }
-        }
-    }
-
-    private void SaveGame()
-    {
-        GameData gameData = new GameData(/* 저장 데이터 */);
-        string jsonString = JsonUtility.ToJson(gameData);
-        File.WriteAllText(SaveFile, jsonString);
-    }
-
-    private void LoadGame()
-    {
-        if (File.Exists(SaveFile))
-        {
-            string jsonString = File.ReadAllText(SaveFile);
-            GameData gameData = JsonUtility.FromJson<GameData>(jsonString);
-            // 게임 데이터 적용
-        }
-    }
-
-    public override void GameEnd()
-    {
-        SaveGame();
-        GameEnded = true;
+        //SaveGame();
+        //GameEnded = true;
         ShowEndingWindow();
-        base.GameEnd();
+        Time.timeScale = 0f;
     }
 
     private void ShowEndingWindow()
@@ -75,11 +72,10 @@ public class VictoryDefeatCondition : GameManager
             EndingWindow.SetActive(true);
         }
     }
-
-
-    [Serializable]
-    private class GameData
-    {
-        // 추가적인 저장할 데이터가 있다면 여기에 추가
-    }
+    //[Serializable]
+    //private class GameData
+    //{
+    //    public int savedEnemyCount;
+    //    public int savedPlayerGold;
+    //}
 }
