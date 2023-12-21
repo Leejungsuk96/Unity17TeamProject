@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower2_RangedAttackData
   m_EditorClassIdentifier: 
   size: 0
-  delay: 10
-  power: 10
+  delay: 1
+  power: 1
   speed: 0
   target:
     serializedVersion: 2
@@ -23,6 +23,6 @@ MonoBehaviour:
   duration: 1
   spread: 10
   range: 10
-  numberofProjectilesPerShot: 10
-  multipleProjectilesAngel: 10
+  numberofProjectilesPerShot: 1
+  multipleProjectilesAngel: 1
   projectileColor: {r: 0, g: 0, b: 0, a: 0}

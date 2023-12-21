@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -9012834177220457782}
   m_Layer: 0
   m_Name: Tower2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,9 @@ MonoBehaviour:
     statsChangeType: 0
     maxHealth: 100
     speed: 10
+    spawnSpeed: 0
     attackSO: {fileID: 11400000, guid: 1963de1937d174f34b51ba58de1e22d8, type: 2}
+  statsModifiers: []
 --- !u!61 &477408625738579758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,6 +191,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f92b8551a7b55d4db9c2462e169097f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerDamager: 20
-  TowerRange: 10
   bulletObj: {fileID: 9032583127975774176, guid: e0598a9f837d7475789c8d28e48a1af1, type: 3}

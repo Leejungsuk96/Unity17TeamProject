@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class RandomSommonsTowerController : MonoBehaviour
 {
     private int currentSommonsCount = 0;
+    private int maxSommonsCount = 50;
+    private int payment = 5;
 
     public List<GameObject> summonsTowersPrefabs = new List<GameObject>();
 
@@ -29,10 +31,14 @@ public class RandomSommonsTowerController : MonoBehaviour
 
     public void SummonsRandomTower()
     {
-        Debug.Log("aaa");
         int randomTowerIndex = Random.Range(0, summonsTowersPrefabs.Count);
-        GameObject summonsTower = Instantiate(summonsTowersPrefabs[randomTowerIndex], summonsTowersPositions[0].position, Quaternion.identity);
-        summonsTower.transform.parent = transform;
-        currentSommonsCount++;
+        if(currentSommonsCount < maxSommonsCount && PlayerGoldManager.instance.playerGold >= payment)
+        {
+            GameObject summonsTower = Instantiate(summonsTowersPrefabs[randomTowerIndex], summonsTowersPositions[0].position, Quaternion.identity);
+            summonsTower.transform.parent = transform;
+            currentSommonsCount++;
+            PlayerGoldManager.instance.playerGold -= payment;
+        }
+
     }
 }
